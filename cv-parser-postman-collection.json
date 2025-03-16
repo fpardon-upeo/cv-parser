@@ -1,0 +1,212 @@
+{
+	"info": {
+		"_postman_id": "f8a7b3e5-6d2c-4a5e-9c8f-1d2e3f4a5b6c",
+		"name": "CV Parser API",
+		"description": "Collection for testing the CV Parser API endpoints",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Health Check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/health",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"health"
+					]
+				},
+				"description": "Check if the API is running"
+			},
+			"response": []
+		},
+		{
+			"name": "Train Models",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/models/train",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"models",
+						"train"
+					]
+				},
+				"description": "Train the CV parser and anonymizer models"
+			},
+			"response": []
+		},
+		{
+			"name": "Parse Resume",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/path/to/your/resume.pdf"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/models/parse",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"models",
+						"parse"
+					]
+				},
+				"description": "Parse a resume file and extract structured data"
+			},
+			"response": []
+		},
+		{
+			"name": "Anonymize Resume",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"parsed_resume\": {\n        \"candidate\": {\n            \"contact_details\": {\n                \"name\": \"John Doe\",\n                \"email\": \"john.doe@example.com\",\n                \"phone\": \"+1 (555) 123-4567\",\n                \"location\": \"New York, NY\",\n                \"linkedin\": \"linkedin.com/in/johndoe\",\n                \"other_urls\": [\"github.com/johndoe\"]\n            },\n            \"work_experience\": [\n                {\n                    \"title\": \"Senior Software Engineer\",\n                    \"company\": \"Tech Company Inc.\",\n                    \"location\": \"New York, NY\",\n                    \"start_date\": \"2018-01\",\n                    \"end_date\": \"Present\",\n                    \"description\": \"Led development of key features\",\n                    \"achievements\": [\"Increased performance by 30%\"],\n                    \"skills_used\": [\"Python\", \"JavaScript\", \"AWS\"]\n                }\n            ],\n            \"education\": [\n                {\n                    \"degree\": \"Bachelor of Science in Computer Science\",\n                    \"institution\": \"University of Example\",\n                    \"location\": \"Boston, MA\",\n                    \"start_date\": \"2010-09\",\n                    \"end_date\": \"2014-05\",\n                    \"details\": \"GPA: 3.8/4.0\"\n                }\n            ],\n            \"languages\": [\n                {\n                    \"language\": \"English\",\n                    \"proficiency\": \"Native\"\n                },\n                {\n                    \"language\": \"Spanish\",\n                    \"proficiency\": \"Intermediate\"\n                }\n            ],\n            \"skills\": [\"Python\", \"JavaScript\", \"React\", \"Node.js\", \"AWS\", \"Docker\"],\n            \"summary\": \"Experienced software engineer with a focus on web development and cloud technologies.\"\n        }\n    },\n    \"anonymization_level\": \"moderate\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/models/anonymize",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"models",
+						"anonymize"
+					]
+				},
+				"description": "Anonymize parsed resume data"
+			},
+			"response": []
+		},
+		{
+			"name": "Parse and Anonymize Resume",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/path/to/your/resume.pdf"
+						},
+						{
+							"key": "anonymization_level",
+							"value": "moderate",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/models/parse-and-anonymize",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"models",
+						"parse-and-anonymize"
+					]
+				},
+				"description": "Parse and anonymize a resume file in one step"
+			},
+			"response": []
+		},
+		{
+			"name": "Generate Visualization",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/path/to/your/resume.pdf"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/models/visualization",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"models",
+						"visualization"
+					]
+				},
+				"description": "Generate a visualization comparing different anonymization levels for a CV"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8000",
+			"type": "string"
+		}
+	]
+} 

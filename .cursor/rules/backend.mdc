@@ -1,0 +1,79 @@
+---
+description: Rules for backend development
+globs: **/src/{api,controllers,services,models,repositories}/**/*.{ts,js}
+alwaysApply: false
+---
+ # Backend Development Rules
+
+## Architecture
+- Implement a layered architecture (Controller, Service, Repository)
+- Use dependency injection for managing dependencies
+- Implement the repository pattern for data access
+- Separate business logic from data access and API endpoints
+- Use middleware for cross-cutting concerns
+
+## API Design
+- Follow RESTful principles for API design
+- Implement versioning for APIs
+- Use consistent naming conventions for endpoints
+- Document all APIs using OpenAPI/Swagger
+- Implement proper HTTP status codes and error responses
+- Use DTOs (Data Transfer Objects) for request/response validation
+
+## Database
+- Use migrations for database schema changes
+- Implement proper indexing for frequently queried fields
+- Use transactions for operations that require atomicity
+- Implement connection pooling for database connections
+- Use query builders or ORMs with proper typing
+- Avoid N+1 query problems
+
+## Authentication & Authorization
+- Implement JWT or session-based authentication
+- Use role-based or attribute-based access control
+- Store passwords using strong hashing algorithms
+- Implement proper token refresh mechanisms
+- Use secure HTTP-only cookies for sensitive data
+
+## Error Handling
+- Implement global error handling middleware
+- Log errors with appropriate context
+- Return user-friendly error messages
+- Include correlation IDs for tracking errors across services
+- Handle different types of errors appropriately (validation, business, system)
+
+## Logging
+- Implement structured logging
+- Include request IDs in logs for traceability
+- Log appropriate information for different environments
+- Implement different log levels (debug, info, warn, error)
+- Avoid logging sensitive information
+
+## Performance
+- Implement caching for frequently accessed data
+- Use pagination for large data sets
+- Optimize database queries
+- Implement rate limiting for APIs
+- Use asynchronous processing for long-running tasks
+
+## Security
+- Implement input validation for all endpoints
+- Use parameterized queries to prevent SQL injection
+- Implement proper CORS configuration
+- Use HTTPS for all communications
+- Follow the principle of least privilege
+- Implement security headers (HSTS, CSP, etc.)
+
+## Testing
+- Write unit tests for business logic
+- Implement integration tests for API endpoints
+- Use mock databases for testing
+- Test error handling and edge cases
+- Implement performance tests for critical endpoints
+
+## Documentation
+- Document the architecture and design decisions
+- Include setup instructions in the README
+- Document environment variables and configuration options
+- Include API documentation with examples
+- Document database schema and relationships

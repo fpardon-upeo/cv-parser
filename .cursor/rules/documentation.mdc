@@ -1,0 +1,84 @@
+---
+description: Standards for documentation across the project
+globs: **/documentation/**/*.{md,mdx}
+alwaysApply: false
+---
+ # Documentation Standards
+
+## Project Documentation
+- Maintain a comprehensive README.md at the root of the project
+- Include setup instructions, prerequisites, and environment configuration
+- Document the project's purpose, features, and architecture
+- Include information about the tech stack and dependencies
+- Provide troubleshooting guides for common issues
+- Include contribution guidelines
+
+## Architecture Documentation
+- Document the high-level architecture using diagrams
+- Use C4 model (Context, Container, Component, Code) for architecture documentation
+- Document key architectural decisions using ADRs (Architecture Decision Records)
+- Include sequence diagrams for complex flows
+- Document integration points with external systems
+- Update architecture documentation when significant changes are made
+
+## API Documentation
+- Document all APIs using OpenAPI/Swagger for REST APIs
+- Include request/response examples
+- Document error responses and status codes
+- Include authentication requirements
+- Document rate limits and pagination
+- Generate interactive API documentation
+
+## Code Documentation
+- Use JSDoc/TSDoc for TypeScript/JavaScript code
+- Document all public functions, classes, and interfaces
+- Include parameter and return type descriptions
+- Document exceptions that may be thrown
+- Include usage examples for complex functions
+- Document side effects and state changes
+
+## User Documentation
+- Create user guides for end-users
+- Include screenshots and step-by-step instructions
+- Document all features and functionality
+- Include FAQs and troubleshooting guides
+- Update user documentation when features change
+- Make documentation accessible and searchable
+
+## Build Plan Documentation
+- Document the project roadmap and milestones
+- Track progress against the build plan
+- Document completed features and outstanding items
+- Include acceptance criteria for features
+- Document dependencies between features
+- Update the build plan regularly
+
+## Changelog
+- Maintain a CHANGELOG.md file
+- Follow semantic versioning
+- Document breaking changes prominently
+- Include migration guides for major version changes
+- Group changes by type (features, bug fixes, performance improvements)
+- Link to relevant issues or pull requests
+
+## Documentation Format
+- Use Markdown for documentation
+- Organize documentation in a logical structure
+- Use consistent formatting and style
+- Include a table of contents for long documents
+- Use diagrams and visuals where appropriate
+- Keep documentation up-to-date with code changes
+
+## Documentation Location
+- Store documentation in the `/documentation` directory
+- Organize documentation by type (architecture, API, user guides)
+- Include a documentation index
+- Link to documentation from the README
+- Make documentation easily discoverable
+
+## Documentation Review
+- Review documentation as part of code reviews
+- Ensure documentation is accurate and complete
+- Check for clarity and readability
+- Verify that examples work as expected
+- Update documentation when code changes

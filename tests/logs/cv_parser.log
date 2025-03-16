@@ -1,0 +1,146 @@
+2025-03-16 15:12:04 | INFO     | app.main:<module>:38 - Application CV Parser v1.0.0 started
+2025-03-16 15:12:04 | INFO     | app.services.document_parser:register_parser:159 - Registered DOCXParser for file type 'docx'
+2025-03-16 15:12:04 | INFO     | app.services.document_parser:register_parser:159 - Registered PDFParser for file type 'pdf'
+2025-03-16 15:12:04 | INFO     | app.services.document_parser:register_parser:159 - Registered TXTParser for file type 'txt'
+2025-03-16 15:12:04 | INFO     | app.services.document_parser:_log_parsing_start:124 - Starting document parsing with TXTParser
+2025-03-16 15:12:04 | INFO     | app.services.document_parser:_log_parsing_complete:128 - Completed document parsing with TXTParser
+2025-03-16 15:12:04 | INFO     | app.services.document_parser:_log_parsing_start:124 - Starting document parsing with TXTParser
+2025-03-16 15:12:04 | INFO     | app.services.document_parser:_log_parsing_complete:128 - Completed document parsing with TXTParser
+2025-03-16 15:12:04 | INFO     | app.services.document_parser:_log_parsing_start:124 - Starting document parsing with TXTParser
+2025-03-16 15:12:04 | INFO     | app.services.document_parser:_log_parsing_complete:128 - Completed document parsing with TXTParser
+2025-03-16 15:12:04 | INFO     | app.services.document_parser:_log_parsing_start:124 - Starting document parsing with TXTParser
+2025-03-16 15:12:04 | INFO     | app.services.document_parser:_log_parsing_complete:128 - Completed document parsing with TXTParser
+2025-03-16 15:12:04 | INFO     | app.services.document_parser:_log_parsing_start:124 - Starting document parsing with TXTParser
+2025-03-16 15:12:04 | INFO     | app.services.document_parser:_log_parsing_complete:128 - Completed document parsing with TXTParser
+2025-03-16 15:12:04 | INFO     | app.services.document_parser:_log_parsing_start:124 - Starting document parsing with TXTParser
+2025-03-16 15:12:04 | INFO     | app.services.document_parser:_log_parsing_complete:128 - Completed document parsing with TXTParser
+2025-03-16 15:12:04 | INFO     | app.services.document_parser:_log_parsing_start:124 - Starting document parsing with TXTParser
+2025-03-16 15:12:04 | INFO     | app.services.document_parser:_log_parsing_complete:128 - Completed document parsing with TXTParser
+2025-03-16 15:12:04 | INFO     | app.services.document_parser:_log_parsing_start:124 - Starting document parsing with TXTParser
+2025-03-16 15:12:04 | INFO     | app.services.document_parser:_log_parsing_complete:128 - Completed document parsing with TXTParser
+2025-03-16 15:12:09 | INFO     | app.main:<module>:38 - Application CV Parser v1.0.0 started
+2025-03-16 15:12:09 | INFO     | app.services.document_parser:register_parser:159 - Registered PDFParser for file type 'pdf'
+2025-03-16 15:12:09 | INFO     | app.services.document_parser:register_parser:159 - Registered DOCXParser for file type 'docx'
+2025-03-16 15:12:09 | INFO     | app.services.document_parser:register_parser:159 - Registered TXTParser for file type 'txt'
+2025-03-16 15:12:49 | INFO     | app.main:<module>:38 - Application CV Parser v1.0.0 started
+2025-03-16 15:12:49 | INFO     | app.services.document_parser:register_parser:159 - Registered PDFParser for file type 'pdf'
+2025-03-16 15:12:49 | INFO     | app.services.document_parser:register_parser:159 - Registered DOCXParser for file type 'docx'
+2025-03-16 15:12:49 | INFO     | app.services.document_parser:register_parser:159 - Registered TXTParser for file type 'txt'
+2025-03-16 15:12:49 | INFO     | app.services.document_parser:_log_parsing_start:124 - Starting document parsing with TXTParser
+2025-03-16 15:12:49 | INFO     | app.services.document_parser:_log_parsing_complete:128 - Completed document parsing with TXTParser
+2025-03-16 15:19:51 | INFO     | app.main:<module>:38 - Application CV Parser v1.0.0 started
+2025-03-16 15:19:51 | INFO     | app.services.document_parser:register_parser:159 - Registered DOCXParser for file type 'docx'
+2025-03-16 15:19:51 | INFO     | app.services.document_parser:register_parser:159 - Registered PDFParser for file type 'pdf'
+2025-03-16 15:19:51 | INFO     | app.services.document_parser:register_parser:159 - Registered TXTParser for file type 'txt'
+2025-03-16 15:19:51 | INFO     | app.services.document_parser:_log_parsing_start:124 - Starting document parsing with TXTParser
+2025-03-16 15:19:51 | INFO     | app.services.document_parser:_log_parsing_complete:128 - Completed document parsing with TXTParser
+2025-03-16 15:19:51 | INFO     | app.services.document_parser:_log_parsing_start:124 - Starting document parsing with TXTParser
+2025-03-16 15:19:51 | INFO     | app.services.document_parser:_log_parsing_complete:128 - Completed document parsing with TXTParser
+2025-03-16 15:19:51 | INFO     | app.services.document_parser:_log_parsing_start:124 - Starting document parsing with TXTParser
+2025-03-16 15:19:51 | INFO     | app.services.document_parser:_log_parsing_complete:128 - Completed document parsing with TXTParser
+2025-03-16 15:19:51 | INFO     | app.services.document_parser:_log_parsing_start:124 - Starting document parsing with TXTParser
+2025-03-16 15:19:51 | INFO     | app.services.document_parser:_log_parsing_complete:128 - Completed document parsing with TXTParser
+2025-03-16 15:19:51 | INFO     | app.services.document_parser:_log_parsing_start:124 - Starting document parsing with TXTParser
+2025-03-16 15:19:51 | INFO     | app.services.document_parser:_log_parsing_complete:128 - Completed document parsing with TXTParser
+2025-03-16 15:19:51 | INFO     | app.services.document_parser:_log_parsing_start:124 - Starting document parsing with TXTParser
+2025-03-16 15:19:51 | INFO     | app.services.document_parser:_log_parsing_complete:128 - Completed document parsing with TXTParser
+2025-03-16 15:19:51 | INFO     | app.services.document_parser:_log_parsing_start:124 - Starting document parsing with TXTParser
+2025-03-16 15:19:51 | INFO     | app.services.document_parser:_log_parsing_complete:128 - Completed document parsing with TXTParser
+2025-03-16 15:19:51 | INFO     | app.services.document_parser:_log_parsing_start:124 - Starting document parsing with TXTParser
+2025-03-16 15:19:51 | INFO     | app.services.document_parser:_log_parsing_complete:128 - Completed document parsing with TXTParser
+2025-03-16 15:19:57 | INFO     | app.main:<module>:38 - Application CV Parser v1.0.0 started
+2025-03-16 15:19:57 | INFO     | app.services.document_parser:register_parser:159 - Registered PDFParser for file type 'pdf'
+2025-03-16 15:19:57 | INFO     | app.services.document_parser:register_parser:159 - Registered DOCXParser for file type 'docx'
+2025-03-16 15:19:57 | INFO     | app.services.document_parser:register_parser:159 - Registered TXTParser for file type 'txt'
+2025-03-16 15:19:57 | INFO     | app.services.document_parser:_log_parsing_start:124 - Starting document parsing with TXTParser
+2025-03-16 15:19:57 | INFO     | app.services.document_parser:_log_parsing_complete:128 - Completed document parsing with TXTParser
+2025-03-16 15:19:57 | INFO     | app.services.document_parser:_log_parsing_start:124 - Starting document parsing with TXTParser
+2025-03-16 15:19:57 | INFO     | app.services.document_parser:_log_parsing_complete:128 - Completed document parsing with TXTParser
+2025-03-16 15:19:57 | INFO     | app.services.document_parser:_log_parsing_start:124 - Starting document parsing with TXTParser
+2025-03-16 15:19:57 | INFO     | app.services.document_parser:_log_parsing_complete:128 - Completed document parsing with TXTParser
+2025-03-16 15:19:57 | INFO     | app.services.document_parser:_log_parsing_start:124 - Starting document parsing with TXTParser
+2025-03-16 15:19:57 | INFO     | app.services.document_parser:_log_parsing_complete:128 - Completed document parsing with TXTParser
+2025-03-16 15:20:50 | INFO     | app.main:<module>:38 - Application CV Parser v1.0.0 started
+2025-03-16 15:20:50 | INFO     | app.services.document_parser:register_parser:159 - Registered PDFParser for file type 'pdf'
+2025-03-16 15:20:50 | INFO     | app.services.document_parser:register_parser:159 - Registered DOCXParser for file type 'docx'
+2025-03-16 15:20:50 | INFO     | app.services.document_parser:register_parser:159 - Registered TXTParser for file type 'txt'
+2025-03-16 15:20:50 | INFO     | app.services.document_parser:_log_parsing_start:124 - Starting document parsing with TXTParser
+2025-03-16 15:20:50 | INFO     | app.services.document_parser:_log_parsing_complete:128 - Completed document parsing with TXTParser
+2025-03-16 15:20:50 | INFO     | app.services.document_parser:_log_parsing_start:124 - Starting document parsing with TXTParser
+2025-03-16 15:20:50 | INFO     | app.services.document_parser:_log_parsing_complete:128 - Completed document parsing with TXTParser
+2025-03-16 15:20:50 | INFO     | app.services.document_parser:_log_parsing_start:124 - Starting document parsing with TXTParser
+2025-03-16 15:20:50 | INFO     | app.services.document_parser:_log_parsing_complete:128 - Completed document parsing with TXTParser
+2025-03-16 15:20:50 | INFO     | app.services.document_parser:_log_parsing_start:124 - Starting document parsing with TXTParser
+2025-03-16 15:20:50 | INFO     | app.services.document_parser:_log_parsing_complete:128 - Completed document parsing with TXTParser
+2025-03-16 15:21:09 | INFO     | app.main:<module>:38 - Application CV Parser v1.0.0 started
+2025-03-16 15:21:09 | INFO     | app.services.document_parser:register_parser:159 - Registered PDFParser for file type 'pdf'
+2025-03-16 15:21:09 | INFO     | app.services.document_parser:register_parser:159 - Registered DOCXParser for file type 'docx'
+2025-03-16 15:21:09 | INFO     | app.services.document_parser:register_parser:159 - Registered TXTParser for file type 'txt'
+2025-03-16 15:21:09 | INFO     | app.services.document_parser:_log_parsing_start:124 - Starting document parsing with TXTParser
+2025-03-16 15:21:09 | INFO     | app.services.document_parser:_log_parsing_complete:128 - Completed document parsing with TXTParser
+2025-03-16 15:21:09 | INFO     | app.services.document_parser:_log_parsing_start:124 - Starting document parsing with TXTParser
+2025-03-16 15:21:09 | INFO     | app.services.document_parser:_log_parsing_complete:128 - Completed document parsing with TXTParser
+2025-03-16 15:21:09 | INFO     | app.services.document_parser:_log_parsing_start:124 - Starting document parsing with TXTParser
+2025-03-16 15:21:09 | INFO     | app.services.document_parser:_log_parsing_complete:128 - Completed document parsing with TXTParser
+2025-03-16 15:21:09 | INFO     | app.services.document_parser:_log_parsing_start:124 - Starting document parsing with TXTParser
+2025-03-16 15:21:09 | INFO     | app.services.document_parser:_log_parsing_complete:128 - Completed document parsing with TXTParser
+2025-03-16 15:21:46 | INFO     | app.main:<module>:38 - Application CV Parser v1.0.0 started
+2025-03-16 15:21:46 | INFO     | app.services.document_parser:register_parser:159 - Registered PDFParser for file type 'pdf'
+2025-03-16 15:21:46 | INFO     | app.services.document_parser:register_parser:159 - Registered DOCXParser for file type 'docx'
+2025-03-16 15:21:46 | INFO     | app.services.document_parser:register_parser:159 - Registered TXTParser for file type 'txt'
+2025-03-16 15:21:46 | INFO     | app.services.document_parser:_log_parsing_start:124 - Starting document parsing with TXTParser
+2025-03-16 15:21:46 | INFO     | app.services.document_parser:_log_parsing_complete:128 - Completed document parsing with TXTParser
+2025-03-16 15:21:46 | INFO     | app.services.document_parser:_log_parsing_start:124 - Starting document parsing with TXTParser
+2025-03-16 15:21:46 | ERROR    | app.services.document_parser:_log_error:136 - Error in TXTParser: Failed to parse TXT document: Invalid document format
+2025-03-16 15:21:46 | INFO     | app.services.document_parser:_log_parsing_start:124 - Starting document parsing with TXTParser
+2025-03-16 15:21:46 | INFO     | app.services.document_parser:_log_parsing_complete:128 - Completed document parsing with TXTParser
+2025-03-16 15:21:46 | INFO     | app.services.document_parser:_log_parsing_start:124 - Starting document parsing with TXTParser
+2025-03-16 15:21:46 | INFO     | app.services.document_parser:_log_parsing_complete:128 - Completed document parsing with TXTParser
+2025-03-16 15:21:51 | INFO     | app.main:<module>:38 - Application CV Parser v1.0.0 started
+2025-03-16 15:21:51 | INFO     | app.services.document_parser:register_parser:159 - Registered DOCXParser for file type 'docx'
+2025-03-16 15:21:51 | INFO     | app.services.document_parser:register_parser:159 - Registered PDFParser for file type 'pdf'
+2025-03-16 15:21:51 | INFO     | app.services.document_parser:register_parser:159 - Registered TXTParser for file type 'txt'
+2025-03-16 15:21:51 | INFO     | app.services.document_parser:_log_parsing_start:124 - Starting document parsing with TXTParser
+2025-03-16 15:21:51 | INFO     | app.services.document_parser:_log_parsing_complete:128 - Completed document parsing with TXTParser
+2025-03-16 15:21:51 | INFO     | app.services.document_parser:_log_parsing_start:124 - Starting document parsing with TXTParser
+2025-03-16 15:21:51 | INFO     | app.services.document_parser:_log_parsing_complete:128 - Completed document parsing with TXTParser
+2025-03-16 15:21:51 | INFO     | app.services.document_parser:_log_parsing_start:124 - Starting document parsing with TXTParser
+2025-03-16 15:21:51 | INFO     | app.services.document_parser:_log_parsing_complete:128 - Completed document parsing with TXTParser
+2025-03-16 15:21:51 | INFO     | app.services.document_parser:_log_parsing_start:124 - Starting document parsing with TXTParser
+2025-03-16 15:21:51 | INFO     | app.services.document_parser:_log_parsing_complete:128 - Completed document parsing with TXTParser
+2025-03-16 15:21:51 | INFO     | app.services.document_parser:_log_parsing_start:124 - Starting document parsing with TXTParser
+2025-03-16 15:21:51 | INFO     | app.services.document_parser:_log_parsing_complete:128 - Completed document parsing with TXTParser
+2025-03-16 15:21:51 | INFO     | app.services.document_parser:_log_parsing_start:124 - Starting document parsing with TXTParser
+2025-03-16 15:21:51 | ERROR    | app.services.document_parser:_log_error:136 - Error in TXTParser: Failed to parse TXT document: Invalid utf-8 sequence detected
+2025-03-16 15:21:51 | INFO     | app.services.document_parser:_log_parsing_start:124 - Starting document parsing with TXTParser
+2025-03-16 15:21:51 | INFO     | app.services.document_parser:_log_parsing_complete:128 - Completed document parsing with TXTParser
+2025-03-16 15:21:51 | INFO     | app.services.document_parser:_log_parsing_start:124 - Starting document parsing with TXTParser
+2025-03-16 15:21:51 | INFO     | app.services.document_parser:_log_parsing_complete:128 - Completed document parsing with TXTParser
+2025-03-16 15:21:57 | INFO     | app.main:<module>:38 - Application CV Parser v1.0.0 started
+2025-03-16 15:21:57 | INFO     | app.services.document_parser:register_parser:159 - Registered PDFParser for file type 'pdf'
+2025-03-16 15:21:57 | INFO     | app.services.document_parser:register_parser:159 - Registered DOCXParser for file type 'docx'
+2025-03-16 15:21:57 | INFO     | app.services.document_parser:register_parser:159 - Registered TXTParser for file type 'txt'
+2025-03-16 15:21:57 | INFO     | app.services.document_parser:_log_parsing_start:124 - Starting document parsing with TXTParser
+2025-03-16 15:21:57 | INFO     | app.services.document_parser:_log_parsing_complete:128 - Completed document parsing with TXTParser
+2025-03-16 15:21:57 | INFO     | app.services.document_parser:_log_parsing_start:124 - Starting document parsing with TXTParser
+2025-03-16 15:21:57 | ERROR    | app.services.document_parser:_log_error:136 - Error in TXTParser: Failed to parse TXT document: Invalid document format
+2025-03-16 15:21:57 | INFO     | app.services.document_parser:_log_parsing_start:124 - Starting document parsing with TXTParser
+2025-03-16 15:21:57 | INFO     | app.services.document_parser:_log_parsing_complete:128 - Completed document parsing with TXTParser
+2025-03-16 15:21:57 | INFO     | app.services.document_parser:_log_parsing_start:124 - Starting document parsing with TXTParser
+2025-03-16 15:21:57 | INFO     | app.services.document_parser:_log_parsing_complete:128 - Completed document parsing with TXTParser
+2025-03-16 15:21:58 | INFO     | app.services.document_parser:_log_parsing_start:124 - Starting document parsing with TXTParser
+2025-03-16 15:21:58 | INFO     | app.services.document_parser:_log_parsing_complete:128 - Completed document parsing with TXTParser
+2025-03-16 15:21:58 | INFO     | app.services.document_parser:_log_parsing_start:124 - Starting document parsing with TXTParser
+2025-03-16 15:21:58 | INFO     | app.services.document_parser:_log_parsing_complete:128 - Completed document parsing with TXTParser
+2025-03-16 15:21:58 | INFO     | app.services.document_parser:_log_parsing_start:124 - Starting document parsing with TXTParser
+2025-03-16 15:21:58 | INFO     | app.services.document_parser:_log_parsing_complete:128 - Completed document parsing with TXTParser
+2025-03-16 15:21:58 | INFO     | app.services.document_parser:_log_parsing_start:124 - Starting document parsing with TXTParser
+2025-03-16 15:21:58 | INFO     | app.services.document_parser:_log_parsing_complete:128 - Completed document parsing with TXTParser
+2025-03-16 15:21:58 | INFO     | app.services.document_parser:_log_parsing_start:124 - Starting document parsing with TXTParser
+2025-03-16 15:21:58 | INFO     | app.services.document_parser:_log_parsing_complete:128 - Completed document parsing with TXTParser
+2025-03-16 15:21:58 | INFO     | app.services.document_parser:_log_parsing_start:124 - Starting document parsing with TXTParser
+2025-03-16 15:21:58 | ERROR    | app.services.document_parser:_log_error:136 - Error in TXTParser: Failed to parse TXT document: Invalid utf-8 sequence detected
+2025-03-16 15:21:58 | INFO     | app.services.document_parser:_log_parsing_start:124 - Starting document parsing with TXTParser
+2025-03-16 15:21:58 | INFO     | app.services.document_parser:_log_parsing_complete:128 - Completed document parsing with TXTParser
+2025-03-16 15:21:58 | INFO     | app.services.document_parser:_log_parsing_start:124 - Starting document parsing with TXTParser
+2025-03-16 15:21:58 | INFO     | app.services.document_parser:_log_parsing_complete:128 - Completed document parsing with TXTParser

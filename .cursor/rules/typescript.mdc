@@ -1,0 +1,72 @@
+---
+description: Rules for TypeScript/JavaScript projects
+globs: **/*.{ts,tsx,js,jsx}
+alwaysApply: false
+---
+ # TypeScript/JavaScript Project Rules
+
+## Type System
+- Prefer TypeScript over JavaScript for new projects
+- Enable strict mode in tsconfig.json
+- Use interface for object shapes that will be implemented or extended
+- Use type for unions, intersections, and mapped types
+- Avoid type assertions (as) unless absolutely necessary
+- Use unknown instead of any when the type is truly unknown
+- Use the non-null assertion operator (!) sparingly
+
+## Error Handling
+- Use Result/Either pattern for operations that can fail
+- Create a custom AppError class hierarchy for domain-specific errors
+- Use async/await with try/catch for asynchronous error handling
+- Implement global error handlers for unhandled exceptions
+- Log errors with appropriate context information
+
+## State Management
+- Use immutable data patterns
+- Implement unidirectional data flow
+- Separate state management from UI components
+- Use appropriate state management libraries based on project size
+- Document state transitions and side effects
+
+## Testing
+- Aim for high test coverage (>80%)
+- Write unit tests for all business logic
+- Implement integration tests for API endpoints
+- Use snapshot testing for UI components
+- Implement end-to-end tests for critical user flows
+- Mock external dependencies in tests
+
+## Performance
+- Implement code splitting for large applications
+- Use memoization for expensive calculations
+- Optimize rendering in UI components
+- Implement proper loading states and skeleton screens
+- Use pagination or virtualization for large data sets
+
+## Security
+- Validate all user inputs
+- Implement proper authentication and authorization
+- Sanitize data before rendering to prevent XSS
+- Use environment variables for sensitive configuration
+- Follow OWASP security guidelines
+
+## Code Organization
+- Use barrel files (index.ts) to simplify imports
+- Organize code by feature/domain rather than by type
+- Keep related files close to each other
+- Use a consistent naming convention for files and folders
+- Implement a modular architecture with clear boundaries
+
+## Documentation
+- Use TSDoc comments for all public APIs
+- Generate API documentation using tools like TypeDoc
+- Document complex type definitions
+- Include usage examples in documentation
+- Document architectural decisions in ADRs (Architecture Decision Records)
+
+## Build and Deployment
+- Use a CI/CD pipeline for automated testing and deployment
+- Implement semantic versioning
+- Generate changelogs automatically
+- Use environment-specific configuration
+- Implement feature flags for controlled rollouts

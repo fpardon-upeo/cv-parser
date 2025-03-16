@@ -1,0 +1,176 @@
+
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>CV Anonymization Comparison</title>
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    line-height: 1.6;
+                    margin: 0;
+                    padding: 20px;
+                    color: #333;
+                }
+                h1 {
+                    color: #2c3e50;
+                    text-align: center;
+                    margin-bottom: 30px;
+                }
+                h2 {
+                    color: #3498db;
+                    border-bottom: 1px solid #eee;
+                    padding-bottom: 10px;
+                    margin-top: 30px;
+                }
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                    margin-bottom: 30px;
+                }
+                th, td {
+                    padding: 12px 15px;
+                    border: 1px solid #ddd;
+                    text-align: left;
+                }
+                th {
+                    background-color: #f8f9fa;
+                    font-weight: bold;
+                }
+                tr:nth-child(even) {
+                    background-color: #f2f2f2;
+                }
+                .redacted {
+                    color: #e74c3c;
+                    font-weight: bold;
+                }
+                .section {
+                    margin-bottom: 40px;
+                    background-color: white;
+                    border-radius: 5px;
+                    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                    padding: 20px;
+                }
+                .level-description {
+                    margin-bottom: 20px;
+                    padding: 15px;
+                    background-color: #f8f9fa;
+                    border-left: 4px solid #3498db;
+                }
+            </style>
+        </head>
+        <body>
+            <h1>CV Anonymization Comparison</h1>
+            
+            <div class="level-description">
+                <p><strong>Basic Level:</strong> Redacts only the most direct personal identifiers (name, email, phone).</p>
+                <p><strong>Moderate Level:</strong> Redacts personal identifiers plus location information and URLs.</p>
+                <p><strong>Thorough Level:</strong> Redacts all identifiable information including company names, institutions, and specific locations.</p>
+            </div>
+        
+            <div class="section">
+                <h2>Contact Details</h2>
+                <table>
+                    <tr>
+                        <th>Field</th>
+                        <th>Original</th>
+                        <th>Basic</th>
+                        <th>Moderate</th>
+                        <th>Thorough</th>
+                    </tr>
+        
+                <tr>
+                    <td>Name</td>
+                    <td>Jolien Buyck</td>
+            <td class="redacted">REDACTED NAME</td><td class="redacted">REDACTED NAME</td><td class="redacted">REDACTED NAME</td></tr>
+                <tr>
+                    <td>Email</td>
+                    <td>jolien.buyck@telenet.be</td>
+            <td class="redacted">REDACTED EMAIL</td><td class="redacted">REDACTED EMAIL</td><td class="redacted">REDACTED EMAIL</td></tr>
+                <tr>
+                    <td>Phone</td>
+                    <td>+1 (555) 123-4567</td>
+            <td class="redacted">REDACTED PHONE</td><td class="redacted">REDACTED PHONE</td><td class="redacted">REDACTED PHONE</td></tr>
+                <tr>
+                    <td>Location</td>
+                    <td>Location extracted from resume</td>
+            <td>Location extracted from resume</td><td class="redacted">REDACTED LOCATION</td><td class="redacted">REDACTED LOCATION</td></tr>
+                <tr>
+                    <td>Linkedin</td>
+                    <td>linkedin profile extracted from resume</td>
+            <td>linkedin profile extracted from resume</td><td class="redacted">REDACTED URL</td><td class="redacted">REDACTED URL</td></tr>
+                </table>
+            </div>
+        
+            <div class="section">
+                <h2>Work Experience</h2>
+                <table>
+                    <tr>
+                        <th>Field</th>
+                        <th>Original</th>
+                        <th>Basic</th>
+                        <th>Moderate</th>
+                        <th>Thorough</th>
+                    </tr>
+        
+                    <tr>
+                        <td>Title</td>
+                        <td>Position extracted from resume</td>
+                <td>Position extracted from resume</td><td>Position extracted from resume</td><td>Position extracted from resume</td></tr>
+                    <tr>
+                        <td>Company</td>
+                        <td>Company extracted from resume</td>
+                <td>Company extracted from resume</td><td>Company extracted from resume</td><td class="redacted">REDACTED COMPANY</td></tr>
+                    <tr>
+                        <td>Location</td>
+                        <td>Location extracted from resume</td>
+                <td>Location extracted from resume</td><td>Location extracted from resume</td><td class="redacted">REDACTED LOCATION</td></tr>
+                    <tr>
+                        <td>Start date</td>
+                        <td>Start date extracted from resume</td>
+                <td>Start date extracted from resume</td><td>Start date extracted from resume</td><td>Start date extracted from resume</td></tr>
+                    <tr>
+                        <td>End date</td>
+                        <td>End date extracted from resume</td>
+                <td>End date extracted from resume</td><td>End date extracted from resume</td><td>End date extracted from resume</td></tr>
+                </table>
+            </div>
+        
+            <div class="section">
+                <h2>Education</h2>
+                <table>
+                    <tr>
+                        <th>Field</th>
+                        <th>Original</th>
+                        <th>Basic</th>
+                        <th>Moderate</th>
+                        <th>Thorough</th>
+                    </tr>
+        
+                    <tr>
+                        <td>Degree</td>
+                        <td>Degree extracted from resume</td>
+                <td>Degree extracted from resume</td><td>Degree extracted from resume</td><td>Degree extracted from resume</td></tr>
+                    <tr>
+                        <td>Institution</td>
+                        <td>Institution extracted from resume</td>
+                <td>Institution extracted from resume</td><td class="redacted">REDACTED INSTITUTION</td><td class="redacted">REDACTED INSTITUTION</td></tr>
+                    <tr>
+                        <td>Location</td>
+                        <td>Location extracted from resume</td>
+                <td>Location extracted from resume</td><td class="redacted">REDACTED LOCATION</td><td class="redacted">REDACTED LOCATION</td></tr>
+                    <tr>
+                        <td>Start date</td>
+                        <td>Start date extracted from resume</td>
+                <td>Start date extracted from resume</td><td>Start date extracted from resume</td><td>Start date extracted from resume</td></tr>
+                    <tr>
+                        <td>End date</td>
+                        <td>End date extracted from resume</td>
+                <td>End date extracted from resume</td><td>End date extracted from resume</td><td>End date extracted from resume</td></tr>
+                </table>
+            </div>
+        
+        </body>
+        </html>
+        

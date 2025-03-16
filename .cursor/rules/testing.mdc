@@ -1,0 +1,190 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+ # Testing Standards
+
+## Test Types
+- **Unit Tests**: Test individual functions, classes, or components in isolation
+- **Integration Tests**: Test interactions between different parts of the system
+- **End-to-End Tests**: Test complete user flows from start to finish
+- **Performance Tests**: Test system performance under load
+- **Security Tests**: Test for security vulnerabilities
+- **Accessibility Tests**: Test for accessibility compliance
+
+## Test Coverage
+- Aim for high test coverage (>80% for critical code)
+- Focus on testing business logic and complex algorithms
+- Test edge cases and error handling
+- Test both happy paths and failure scenarios
+- Prioritize testing based on risk and importance
+
+## Test Organization
+- Organize tests to mirror the structure of the source code
+- Group tests by feature or domain
+- Use descriptive test file names
+- Keep test files close to the code they test
+- Use consistent naming conventions for test files
+
+## Test Structure
+- Use the AAA pattern (Arrange, Act, Assert)
+- Keep tests small and focused
+- Test one thing per test case
+- Use descriptive test names that explain what is being tested
+- Group related tests using describe blocks
+- Use beforeEach and afterEach for setup and teardown
+
+## Test Quality
+- Tests should be deterministic (no flaky tests)
+- Tests should be independent (no dependencies between tests)
+- Tests should be fast (avoid slow tests)
+- Tests should be readable and maintainable
+- Tests should provide clear failure messages
+
+## Mocking and Stubbing
+- Mock external dependencies
+- Use dependency injection to facilitate testing
+- Create reusable test fixtures and factories
+- Use realistic test data
+- Avoid excessive mocking
+
+## Test Driven Development
+- Write tests before implementing features
+- Use tests to drive the design
+- Refactor code and tests as needed
+- Run tests frequently during development
+- Fix failing tests immediately
+
+## Testing Tools
+- Use a consistent testing framework
+- Use assertion libraries for readable assertions
+- Use mocking libraries for creating test doubles
+- Use code coverage tools to measure test coverage
+- Use snapshot testing for UI components
+
+## Continuous Integration
+- Run tests automatically on every commit
+- Fail the build if tests fail
+- Run different types of tests at appropriate stages
+- Generate test reports and code coverage reports
+- Monitor test performance and stability
+
+## Test Documentation
+- Document the testing strategy
+- Document test setup and requirements
+- Include examples of how to run tests
+- Document known limitations or edge cases
+- Keep test documentation up-to-date
+
+## TypeScript Testing Example
+```typescript
+// Example of a well-structured test file using Jest
+
+import { getUserById, updateUserEmail } from '../src/services/userService';
+import { UserRepository } from '../src/repositories/userRepository';
+import { ValidationError, NotFoundError } from '../src/errors/appError';
+
+// Mock dependencies
+jest.mock('../src/repositories/userRepository');
+const mockUserRepository = UserRepository as jest.Mocked<typeof UserRepository>;
+
+describe('User Service', () => {
+  // Setup and teardown
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
+
+  describe('getUserById', () => {
+    // Happy path test
+    it('should return a user when found', async () => {
+      // Arrange
+      const mockUser = { id: '123', name: 'Test User', email: 'test@example.com' };
+      mockUserRepository.findById.mockResolvedValue(mockUser);
+
+      // Act
+      const result = await getUserById('123');
+
+      // Assert
+      expect(result.isSuccess).toBe(true);
+      if (result.isSuccess) {
+        expect(result.value).toEqual(mockUser);
+      }
+      expect(mockUserRepository.findById).toHaveBeenCalledWith('123');
+    });
+
+    // Error path test
+    it('should return a NotFoundError when user is not found', async () => {
+      // Arrange
+      mockUserRepository.findById.mockResolvedValue(null);
+
+      // Act
+      const result = await getUserById('123');
+
+      // Assert
+      expect(result.isFailure).toBe(true);
+      if (result.isFailure) {
+        expect(result.error).toBeInstanceOf(NotFoundError);
+        expect(result.error.message).toContain('123');
+      }
+    });
+
+    // Exception test
+    it('should return a DatabaseError when repository throws', async () => {
+      // Arrange
+      mockUserRepository.findById.mockRejectedValue(new Error('DB connection error'));
+
+      // Act
+      const result = await getUserById('123');
+
+      // Assert
+      expect(result.isFailure).toBe(true);
+      if (result.isFailure) {
+        expect(result.error.code).toBe('DB_FETCH_ERROR');
+        expect(result.error.context).toHaveProperty('id', '123');
+      }
+    });
+  });
+
+  describe('updateUserEmail', () => {
+    // Input validation test
+    it('should return ValidationError for invalid email', async () => {
+      // Arrange
+      const invalidEmail = 'not-an-email';
+
+      // Act
+      const result = await updateUserEmail('123', invalidEmail);
+
+      // Assert
+      expect(result.isFailure).toBe(true);
+      if (result.isFailure) {
+        expect(result.error).toBeInstanceOf(ValidationError);
+      }
+      // Verify we didn't call the repository
+      expect(mockUserRepository.findById).not.toHaveBeenCalled();
+    });
+
+    // Happy path test
+    it('should update user email when valid', async () => {
+      // Arrange
+      const mockUser = { id: '123', name: 'Test User', email: 'old@example.com' };
+      const updatedUser = { ...mockUser, email: 'new@example.com' };
+      mockUserRepository.findById.mockResolvedValue(mockUser);
+      mockUserRepository.save.mockResolvedValue(updatedUser);
+
+      // Act
+      const result = await updateUserEmail('123', 'new@example.com');
+
+      // Assert
+      expect(result.isSuccess).toBe(true);
+      if (result.isSuccess) {
+        expect(result.value).toEqual(updatedUser);
+      }
+      expect(mockUserRepository.save).toHaveBeenCalledWith(expect.objectContaining({
+        id: '123',
+        email: 'new@example.com'
+      }));
+    });
+  });
+});
+```

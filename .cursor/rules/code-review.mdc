@@ -1,0 +1,147 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+ # Code Review Standards
+
+## General Principles
+- Code reviews are a collaborative process
+- Focus on the code, not the person
+- Be respectful and constructive
+- Provide specific and actionable feedback
+- Explain the reasoning behind your feedback
+- Acknowledge good practices and improvements
+
+## What to Review
+- **Functionality**: Does the code work as expected?
+- **Architecture**: Is the code well-structured and maintainable?
+- **Performance**: Are there any performance concerns?
+- **Security**: Are there any security vulnerabilities?
+- **Readability**: Is the code easy to understand?
+- **Testability**: Is the code testable?
+- **Documentation**: Is the code well-documented?
+- **Error Handling**: Are errors handled appropriately?
+- **Edge Cases**: Are edge cases handled?
+- **Consistency**: Does the code follow project conventions?
+
+## Code Review Checklist
+
+### Functionality
+- [ ] The code works as expected
+- [ ] All requirements are implemented
+- [ ] Edge cases are handled
+- [ ] The code is backward compatible (if applicable)
+- [ ] The code handles errors appropriately
+
+### Architecture
+- [ ] The code follows SOLID principles
+- [ ] The code is modular and reusable
+- [ ] Dependencies are properly managed
+- [ ] The code follows the project's architecture
+- [ ] The code is extensible for future changes
+
+### Performance
+- [ ] The code is efficient
+- [ ] There are no unnecessary computations
+- [ ] Database queries are optimized
+- [ ] Memory usage is reasonable
+- [ ] The code handles large data sets appropriately
+
+### Security
+- [ ] User input is validated and sanitized
+- [ ] Authentication and authorization are properly implemented
+- [ ] Sensitive data is handled securely
+- [ ] There are no SQL injection vulnerabilities
+- [ ] There are no XSS vulnerabilities
+
+### Readability
+- [ ] The code is easy to understand
+- [ ] Variable and function names are descriptive
+- [ ] The code is well-formatted
+- [ ] Complex logic is explained with comments
+- [ ] The code follows the project's style guide
+
+### Testability
+- [ ] The code is testable
+- [ ] Tests are included
+- [ ] Tests cover happy paths and edge cases
+- [ ] Tests are readable and maintainable
+- [ ] Test coverage is adequate
+
+### Documentation
+- [ ] Public APIs are documented
+- [ ] Complex logic is explained
+- [ ] The code includes appropriate comments
+- [ ] Documentation is up-to-date
+- [ ] Documentation follows the project's standards
+
+## Code Review Process
+1. **Preparation**: Understand the requirements and context
+2. **First Pass**: Get a high-level understanding of the changes
+3. **Detailed Review**: Review the code in detail
+4. **Testing**: Test the code if possible
+5. **Feedback**: Provide constructive feedback
+6. **Follow-up**: Verify that feedback has been addressed
+
+## Feedback Guidelines
+- Be specific and actionable
+- Explain the reasoning behind your feedback
+- Provide examples or references
+- Prioritize feedback (critical, major, minor)
+- Suggest alternatives when pointing out issues
+- Ask questions rather than making assumptions
+- Acknowledge good practices and improvements
+
+## Example Feedback
+
+### Good Feedback
+```
+The error handling in the `getUserById` function could be improved. Currently, it returns null when a user is not found, which makes it hard to distinguish between a non-existent user and a database error.
+
+Consider using the Result pattern we've established in the project:
+
+```typescript
+async function getUserById(id: string): Promise<Result<User, AppError>> {
+  try {
+    const user = await userRepository.findById(id);
+    if (!user) {
+      return failure(new NotFoundError(`User with id ${id} not found`));
+    }
+    return success(user);
+  } catch (error) {
+    return failure(new DatabaseError('Failed to fetch user', 'DB_FETCH_ERROR', { id, error }));
+  }
+}
+```
+
+This would make error handling more explicit and consistent with our other services.
+```
+
+### Poor Feedback
+```
+This code is bad. Fix the error handling.
+```
+
+## Code Review Etiquette
+- Respond to code reviews promptly
+- Be open to feedback
+- Explain your decisions when disagreeing
+- Thank reviewers for their feedback
+- Keep discussions focused on the code
+- Resolve discussions when addressed
+- Follow up on action items
+
+## Automated Code Reviews
+- Use linters and static analysis tools
+- Use code formatters
+- Use automated tests
+- Use code coverage tools
+- Use security scanning tools
+
+## Continuous Improvement
+- Learn from code reviews
+- Share knowledge and best practices
+- Update coding standards based on lessons learned
+- Regularly review and improve the code review process
+- Provide training and mentoring for new team members

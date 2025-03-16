@@ -1,0 +1,40 @@
+JOHN DOE
+Software Engineer
+john.doe@email.com | (555) 123-4567
+123 Tech Street, San Francisco, CA 94105
+LinkedIn: linkedin.com/in/johndoe
+
+SUMMARY
+Experienced software engineer with 5+ years of experience in full-stack development, 
+specializing in Python and JavaScript frameworks.
+
+WORK EXPERIENCE
+
+Senior Software Engineer | TechCorp Inc.
+January 2020 - Present | San Francisco, CA
+- Led development of microservices architecture using Python and FastAPI
+- Implemented CI/CD pipeline reducing deployment time by 40%
+- Mentored junior developers and conducted code reviews
+
+Software Engineer | StartupCo
+March 2018 - December 2019 | San Francisco, CA
+- Developed and maintained React-based front-end applications
+- Implemented RESTful APIs using Django
+- Improved application performance by 30%
+
+EDUCATION
+
+Bachelor of Science in Computer Science
+University of California, Berkeley
+2014 - 2018
+
+SKILLS
+- Languages: Python, JavaScript, TypeScript
+- Frameworks: React, Django, FastAPI
+- Tools: Docker, Kubernetes, Git
+- Databases: PostgreSQL, MongoDB
+
+LANGUAGES
+- English (Native)
+- Spanish (Professional)
+- Mandarin (Basic) 

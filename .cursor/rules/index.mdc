@@ -1,0 +1,56 @@
+---
+description: This index file provides an overview of all the rules and guidelines for projects. These rules are designed to ensure consistency, quality, and maintainability across all projects.
+globs: 
+alwaysApply: false
+---
+ # Cursor Rules Index
+
+This index file provides an overview of all the rules and guidelines for projects. These rules are designed to ensure consistency, quality, and maintainability across all projects.
+
+## Core Rules
+
+- [Global Rules](mdc:global.mdc): Core principles and guidelines that apply to all projects
+- [Documentation Standards](mdc:documentation.mdc): Guidelines for project, code, and API documentation
+- [Build Plan Management](mdc:build-plan.mdc): Guidelines for managing project roadmaps and sprints
+- [Error Handling Patterns](mdc:error-handling.mdc): Standardized approaches to error handling
+- [Testing Standards](mdc:testing.mdc): Guidelines for writing and organizing tests
+- [Code Review Standards](mdc:code-review.mdc): Process and guidelines for code reviews
+
+## Technology-Specific Rules
+
+- [TypeScript/JavaScript](mdc:typescript.mdc): Guidelines specific to TypeScript and JavaScript projects
+- [Frontend Development](mdc:frontend.mdc): Guidelines for frontend development
+- [Backend Development](mdc:backend.mdc): Guidelines for backend development
+
+## Templates
+
+- [Project Template](mdc:project-template.mdc): Default project structure and initial files
+
+## How to Use These Rules
+
+1. **New Projects**: When starting a new project, follow the [Project Template](mdc:project-template.mdc) to set up the initial structure.
+
+2. **Development**: During development, refer to the appropriate rules based on the type of work:
+   - For general principles, see [Global Rules](mdc:global.mdc)
+   - For technology-specific guidelines, see the relevant technology rule file
+   - For documentation, see [Documentation Standards](mdc:documentation.mdc)
+   - For error handling, see [Error Handling Patterns](mdc:error-handling.mdc)
+
+3. **Planning**: When planning work, follow the [Build Plan Management](mdc:build-plan.mdc) guidelines.
+
+4. **Testing**: When writing tests, follow the [Testing Standards](mdc:testing.mdc).
+
+5. **Code Reviews**: When reviewing code, use the [Code Review Standards](mdc:code-review.mdc) as a reference.
+
+## Rule Updates
+
+These rules should evolve over time based on lessons learned and best practices. When updating rules:
+
+1. Discuss proposed changes with the team
+2. Document the rationale for the change
+3. Update the relevant rule file
+4. Communicate the changes to the team
+
+## Enforcement
+
+These rules are guidelines, not strict requirements. Use your judgment when applying them, and prioritize delivering value over strict adherence to rules. However, consistent application of these guidelines will lead to more maintainable, higher-quality code.

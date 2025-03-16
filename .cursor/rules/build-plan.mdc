@@ -1,0 +1,175 @@
+---
+description: Guidelines for managing project implementation
+globs: **/build-plan/**/*.{md,mdx}
+alwaysApply: false
+---
+# Technical Implementation Roadmap
+
+This document outlines the specific implementation steps that should be followed when developing features for this project. The AI assistant should follow this plan in the specified order to ensure a structured and consistent development approach.
+
+## Implementation Process
+
+### 1. Requirement Analysis
+- Review the feature requirements thoroughly
+- Identify all necessary components and dependencies
+- Determine the impact on existing code
+- Create a list of acceptance criteria for the feature
+
+### 2. Architecture Planning
+- Design the component structure before implementation
+- Identify necessary data models and interfaces
+- Plan API endpoints or service methods
+- Document the planned architecture in the appropriate documentation folder
+
+### 3. Sequential Build Planning
+- Break down the feature into user stories
+- Prioritize user stories based on dependencies and business value
+- Create technical designs for each user story
+- Document how each user story ties into the overall solution
+- Save the build plan to the build plans folder (e.g., `sprint-X.md` and `sprint-X-tasks.md`)
+
+### 4. Implementation Order
+For each feature, implement components in this order:
+1. Data models and interfaces
+2. Service/utility functions
+3. API endpoints/controllers
+4. UI components (for frontend features)
+5. Tests for all implemented components
+
+### 5. Testing Strategy
+- Write unit tests for all business logic
+- Implement integration tests for API endpoints
+- Create UI tests for frontend components
+- Ensure all edge cases are covered
+
+### 6. Documentation Updates
+- Update API documentation for new endpoints
+- Document new components and their usage
+- Update architecture diagrams if necessary
+- Add usage examples for complex features
+
+## Sprint Build Plan Template
+
+### Sprint X: [Sprint Name]
+
+**Sprint Goal**: [Brief description of what this sprint aims to achieve]
+
+**Sprint Duration**: [Start date] to [End date]
+
+### User Stories
+
+#### User Story 1: [User Story Title]
+**As a** [type of user],  
+**I want to** [action or feature],  
+**So that** [benefit or value].
+
+**Priority**: High/Medium/Low
+
+**Story Points**: [Estimate]
+
+**Technical Design**:
+- Component architecture required
+- Data model changes
+- API endpoints needed
+- UI components to develop
+
+**Implementation Steps**:
+1. [Specific implementation step]
+2. [Specific implementation step]
+3. [Specific implementation step]
+
+**Solution Alignment**:
+- [Explanation of how this user story ties into the overall solution]
+- [Specific part of the solution this implements or helps]
+
+**Acceptance Criteria**:
+- [Specific criteria that must be met]
+- [Specific criteria that must be met]
+
+**Dependencies**:
+- [List any dependencies on other user stories or components]
+
+#### User Story 2: [User Story Title]
+[Follow same format as above]
+
+### Technical Debt and Refactoring
+
+**Items to Address**:
+- [Technical debt item]
+- [Refactoring opportunity]
+
+**Justification**:
+- [Explanation of why addressing these items is important for this sprint]
+
+## Current Sprint Implementation Plan
+
+### Feature: [Current Feature Name]
+**Priority**: High/Medium/Low
+
+**Description**: [Brief description of the feature]
+
+**User Stories**:
+1. [Reference to user story 1]
+2. [Reference to user story 2]
+3. [Reference to user story 3]
+
+**Implementation Steps**:
+1. Create data models for [specific models]
+2. Implement service methods for [specific functionality]
+3. Create API endpoints for [specific endpoints]
+4. Develop UI components for [specific UI elements]
+5. Write tests for all components
+
+**Dependencies**:
+- [List any dependencies on other features or components]
+
+**Acceptance Criteria**:
+- [List specific criteria that must be met]
+
+### Next Features in Queue
+1. [Feature 1] - Priority: High
+2. [Feature 2] - Priority: Medium
+3. [Feature 3] - Priority: Low
+
+## Implementation Guidelines
+
+### Code Structure
+- Follow the established project architecture
+- Keep components small and focused
+- Use proper separation of concerns
+- Implement proper error handling
+- Follow the established naming conventions
+
+### Performance Considerations
+- Optimize database queries
+- Implement caching where appropriate
+- Use pagination for large data sets
+- Optimize frontend rendering
+
+### Security Requirements
+- Validate all user inputs
+- Implement proper authentication and authorization
+- Follow secure coding practices
+- Protect sensitive data
+
+### Sequential Thinking Approach
+- Consult the sprint build plan document regularly during implementation
+- Reference how current work connects to the overall solution
+- Update the build plan document with progress, challenges, and decisions
+- Use the sprint task document as an external memory for tracking progress
+
+The AI assistant should:
+- Update this document as features are implemented
+- Mark completed steps
+- Document any deviations from the plan with justification
+- Highlight any blockers or issues encountered
+- Use sequential thinking to explain rationale behind implementation decisions
+
+## Completion Criteria
+
+A feature is considered complete when:
+- All implementation steps are finished
+- Documentation is updated
+- Code meets the project's quality standards
+- All acceptance criteria are met
+- The relationship to the overall solution is documented

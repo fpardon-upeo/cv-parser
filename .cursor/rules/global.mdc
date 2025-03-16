@@ -1,0 +1,73 @@
+---
+description: Core principles and guidelines that apply to all projects
+glob: "**/*"
+---
+ # Global Rules for All Projects
+
+## Documentation Requirements
+- All projects must include a comprehensive documentation folder at the root level
+- Documentation must be kept up-to-date with each significant code change
+- Documentation should be written with newcomers and other developers in mind
+- Include architecture diagrams where appropriate
+- Document all APIs, interfaces, and key functions
+- Maintain a changelog for tracking significant changes
+
+## Code Documentation
+- All public functions, classes, and interfaces must have JSDoc/TSDoc style comments
+- Comments should explain "why" not just "what" the code does
+- Complex algorithms or business logic should include detailed explanations
+- Use TODO comments for future improvements with clear descriptions
+
+## Type Definitions and Interfaces
+- Use strong typing throughout the codebase
+- Create reusable interfaces for common data structures
+- Avoid using `any` type unless absolutely necessary
+- Use generics where appropriate to create flexible, type-safe components
+- Define enums for values with a fixed set of options
+
+## Error Handling
+- Implement consistent error handling patterns across the codebase
+- Create custom error classes for different categories of errors
+- Ensure all errors are properly typed
+- Include meaningful error messages that aid in debugging
+- Handle edge cases explicitly rather than allowing silent failures
+
+## Code Readability
+- Use descriptive variable and function names
+- Keep functions small and focused on a single responsibility
+- Limit nesting to 3 levels where possible
+- Use meaningful constants instead of magic numbers or strings
+- Follow consistent formatting and style guidelines
+
+## File Structure
+- Keep files under 300 lines where possible
+- Group related functionality in directories
+- Use index files to simplify imports
+- Separate business logic from UI components
+- Organize files by feature rather than by type when appropriate
+
+## Separation of Concerns
+- Maintain clear boundaries between layers (UI, business logic, data access)
+- Use dependency injection to manage component dependencies
+- Implement the repository pattern for data access
+- Keep components focused on a single responsibility
+- Avoid tight coupling between modules
+
+## Build Plan Integration
+- Always check the build plan before implementing new features
+- Update the build plan with progress and completed items
+- Use the build plan as the source of truth for development priorities
+- Document any deviations from the build plan with justification
+
+## Default Folder Structure
+Every project should include at minimum:
+- `/documentation` - For all project documentation
+- `/documentation/architecture` - For architecture diagrams and decisions
+- `/documentation/api` - For API documentation
+- `/documentation/guides` - For usage guides and tutorials
+- `/build-plan` - For project roadmap and sprint planning
+- `/build-plan/current` - For active sprint or milestone details
+- `/build-plan/completed` - For archived completed milestones
+- `/src` - For source code
+- `/tests` - For test files
+- `/config` - For configuration files

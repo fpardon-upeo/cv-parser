@@ -1,0 +1,236 @@
+---
+description: Standardized approaches to error handling
+globs: **/src/**/*.{ts,tsx,js,jsx}
+alwaysApply: false
+---
+ # Error Handling Patterns
+
+## Error Types
+- Create a hierarchy of error classes
+- Extend from a base AppError class
+- Categorize errors by domain (e.g., ValidationError, DatabaseError, NetworkError)
+- Include error codes for each error type
+- Include appropriate metadata with errors
+- Use descriptive error messages
+
+## Result Pattern
+- Use a Result/Either pattern for operations that can fail
+- Return a Result object with success/failure status
+- Include error details in failure cases
+- Chain operations with Results
+- Handle errors at the appropriate level
+- Avoid throwing exceptions for expected error cases
+
+## TypeScript Implementation
+```typescript
+// Base Error class
+export class AppError extends Error {
+  public readonly code: string;
+  public readonly statusCode: number;
+  public readonly isOperational: boolean;
+  public readonly context?: Record<string, unknown>;
+
+  constructor(
+    message: string,
+    code: string,
+    statusCode = 500,
+    isOperational = true,
+    context?: Record<string, unknown>
+  ) {
+    super(message);
+    this.name = this.constructor.name;
+    this.code = code;
+    this.statusCode = statusCode;
+    this.isOperational = isOperational;
+    this.context = context;
+    Error.captureStackTrace(this, this.constructor);
+  }
+}
+
+// Domain-specific error classes
+export class ValidationError extends AppError {
+  constructor(
+    message: string,
+    code = 'VALIDATION_ERROR',
+    context?: Record<string, unknown>
+  ) {
+    super(message, code, 400, true, context);
+  }
+}
+
+export class DatabaseError extends AppError {
+  constructor(
+    message: string,
+    code = 'DATABASE_ERROR',
+    context?: Record<string, unknown>
+  ) {
+    super(message, code, 500, true, context);
+  }
+}
+
+export class NotFoundError extends AppError {
+  constructor(
+    message: string,
+    code = 'NOT_FOUND',
+    context?: Record<string, unknown>
+  ) {
+    super(message, code, 404, true, context);
+  }
+}
+
+// Result pattern
+export type Result<T, E = AppError> = Success<T> | Failure<E>;
+
+export class Success<T> {
+  readonly value: T;
+  readonly isSuccess: true = true;
+  readonly isFailure: false = false;
+
+  constructor(value: T) {
+    this.value = value;
+  }
+
+  map<U>(fn: (value: T) => U): Result<U> {
+    return new Success(fn(this.value));
+  }
+
+  flatMap<U>(fn: (value: T) => Result<U>): Result<U> {
+    return fn(this.value);
+  }
+
+  getOrElse(_defaultValue: T): T {
+    return this.value;
+  }
+
+  getOrThrow(): T {
+    return this.value;
+  }
+}
+
+export class Failure<E> {
+  readonly error: E;
+  readonly isSuccess: false = false;
+  readonly isFailure: true = true;
+
+  constructor(error: E) {
+    this.error = error;
+  }
+
+  map<U>(_fn: (value: never) => U): Result<U, E> {
+    return this as unknown as Result<U, E>;
+  }
+
+  flatMap<U>(_fn: (value: never) => Result<U>): Result<U, E> {
+    return this as unknown as Result<U, E>;
+  }
+
+  getOrElse<T>(defaultValue: T): T {
+    return defaultValue;
+  }
+
+  getOrThrow(): never {
+    if (this.error instanceof Error) {
+      throw this.error;
+    }
+    throw new Error(String(this.error));
+  }
+}
+
+// Helper functions
+export const success = <T>(value: T): Success<T> => new Success(value);
+export const failure = <E>(error: E): Failure<E> => new Failure(error);
+```
+
+## Usage Examples
+```typescript
+// Function that returns a Result
+async function getUserById(id: string): Promise<Result<User, AppError>> {
+  try {
+    const user = await userRepository.findById(id);
+    if (!user) {
+      return failure(new NotFoundError(`User with id ${id} not found`));
+    }
+    return success(user);
+  } catch (error) {
+    return failure(new DatabaseError('Failed to fetch user', 'DB_FETCH_ERROR', { id, error }));
+  }
+}
+
+// Using the Result
+async function updateUserEmail(userId: string, email: string): Promise<Result<User, AppError>> {
+  // Validate input
+  if (!isValidEmail(email)) {
+    return failure(new ValidationError('Invalid email format'));
+  }
+
+  // Get user
+  const userResult = await getUserById(userId);
+  if (userResult.isFailure) {
+    return userResult; // Propagate the error
+  }
+
+  // Update user
+  const user = userResult.value;
+  try {
+    user.email = email;
+    const updatedUser = await userRepository.save(user);
+    return success(updatedUser);
+  } catch (error) {
+    return failure(new DatabaseError('Failed to update user', 'DB_UPDATE_ERROR', { userId, email, error }));
+  }
+}
+
+// Handling the Result
+async function handleUpdateUserEmail(userId: string, email: string): Promise<void> {
+  const result = await updateUserEmail(userId, email);
+  
+  if (result.isSuccess) {
+    console.log('User updated successfully:', result.value);
+    return;
+  }
+  
+  // Handle different error types
+  const error = result.error;
+  if (error instanceof ValidationError) {
+    console.error('Validation error:', error.message);
+    // Show validation error to user
+  } else if (error instanceof NotFoundError) {
+    console.error('Not found error:', error.message);
+    // Show not found error to user
+  } else {
+    console.error('Unexpected error:', error);
+    // Show generic error to user
+    // Log error for debugging
+  }
+}
+```
+
+## Error Handling in Different Contexts
+
+### Backend API
+- Use middleware for global error handling
+- Return appropriate HTTP status codes
+- Include error details in the response
+- Log errors with appropriate context
+- Handle different error types appropriately
+
+### Frontend
+- Use error boundaries for component errors
+- Show user-friendly error messages
+- Implement retry mechanisms where appropriate
+- Log errors with appropriate context
+- Handle API errors gracefully
+
+### Asynchronous Code
+- Use async/await with try/catch
+- Return Results from async functions
+- Handle errors at the appropriate level
+- Avoid unhandled promise rejections
+- Use Promise.all with error handling
+
+## Logging
+- Log errors with appropriate context
+- Include correlation IDs for tracking errors across services
+- Use structured logging
+- Log different levels based on error severity
+- Avoid logging sensitive information

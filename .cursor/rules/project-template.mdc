@@ -1,0 +1,161 @@
+---
+description: Default project structure and initial files
+globs: **/README.md
+alwaysApply: false
+---
+ # Default Project Structure Template
+
+When creating a new project, the following folder structure should be established:
+
+```
+project-root/
+├── README.md                     # Project overview, setup instructions, and documentation links
+├── CHANGELOG.md                  # Detailed changelog following semantic versioning
+├── .gitignore                    # Git ignore file
+├── documentation/                # All project documentation
+│   ├── README.md                 # Documentation overview and index
+│   ├── architecture/             # Architecture documentation
+│   │   ├── overview.md           # High-level architecture overview
+│   │   ├── decisions/            # Architecture Decision Records (ADRs)
+│   │   └── diagrams/             # Architecture diagrams
+│   ├── api/                      # API documentation
+│   │   ├── endpoints.md          # Endpoint documentation
+│   │   └── examples/             # API request/response examples
+│   └── guides/                   # Usage guides and tutorials
+│       ├── setup.md              # Setup guide
+│       ├── development.md        # Development guide
+│       └── deployment.md         # Deployment guide
+├── build-plan/                   # Project roadmap and sprint planning
+│   ├── README.md                 # Build plan overview
+│   ├── roadmap.md                # High-level project roadmap
+│   ├── current/                  # Current sprint or milestone
+│   │   ├── sprint-X.md           # Current sprint details
+│   │   └── tasks/                # Detailed task breakdowns
+│   └── completed/                # Archived completed milestones
+│       └── sprint-history.md     # History of completed sprints
+├── src/                          # Source code
+│   ├── index.ts                  # Entry point
+│   ├── types/                    # Type definitions
+│   ├── utils/                    # Utility functions
+│   ├── config/                   # Configuration
+│   ├── services/                 # Business logic services
+│   ├── models/                   # Data models
+│   ├── api/                      # API endpoints (for backend)
+│   └── components/               # UI components (for frontend)
+├── tests/                        # Test files
+│   ├── unit/                     # Unit tests
+│   ├── integration/              # Integration tests
+│   └── e2e/                      # End-to-end tests
+└── config/                       # Configuration files
+    ├── default.ts                # Default configuration
+    ├── development.ts            # Development configuration
+    ├── production.ts             # Production configuration
+    └── test.ts                   # Test configuration
+```
+
+## Initial Files to Create
+
+### README.md
+```markdown
+# Project Name
+
+Brief description of the project.
+
+## Features
+
+- Feature 1
+- Feature 2
+- Feature 3
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (version X.X.X)
+- npm (version X.X.X)
+- Other dependencies...
+
+### Installation
+
+1. Clone the repository
+   ```bash
+   git clone https://github.com/username/project.git
+   ```
+
+2. Install dependencies
+   ```bash
+   npm install
+   ```
+
+3. Configure environment variables
+   ```bash
+   cp .env.example .env
+   ```
+
+4. Start the development server
+   ```bash
+   npm run dev
+   ```
+
+## Documentation
+
+- [Architecture Overview](mdc:documentation/architecture/overview.md)
+- [API Documentation](mdc:documentation/api/endpoints.md)
+- [Development Guide](mdc:documentation/guides/development.md)
+- [Deployment Guide](mdc:documentation/guides/deployment.md)
+
+## Build Plan
+
+The current sprint and project roadmap can be found in the [build-plan](mdc:build-plan) directory.
+
+## Contributing
+
+Please read [CONTRIBUTING.md](mdc:CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
+
+## License
+
+This project is licensed under the [LICENSE NAME] - see the [LICENSE](mdc:LICENSE) file for details.
+```
+
+### documentation/README.md
+```markdown
+# Documentation
+
+This directory contains all the documentation for the project.
+
+## Contents
+
+- [Architecture](mdc:architecture): Architecture documentation, including diagrams and decisions
+- [API](mdc:api): API documentation, including endpoints and examples
+- [Guides](mdc:guides): Usage guides and tutorials
+
+## Getting Started
+
+If you're new to the project, start with the following documents:
+
+1. [Architecture Overview](mdc:architecture/overview.md)
+2. [Setup Guide](mdc:guides/setup.md)
+3. [Development Guide](mdc:guides/development.md)
+```
+
+### build-plan/README.md
+```markdown
+# Build Plan
+
+This directory contains the project roadmap and sprint planning.
+
+## Contents
+
+- [Roadmap](mdc:roadmap.md): High-level project roadmap
+- [Current Sprint](mdc:current): Current sprint or milestone details
+- [Completed Sprints](mdc:completed): Archive of completed sprints
+
+## Process
+
+1. The build plan is reviewed at the start of each development session
+2. Progress is updated at the end of each development session
+3. The build plan is used to guide development priorities
+4. All development work should be aligned with the build plan
+```
+
+These templates should be adapted based on the specific requirements of each project, but they provide a consistent starting point for all new projects.
