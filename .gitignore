@@ -42,4 +42,8 @@ Thumbs.db
 
 # Project specific
 app/output/*
-!app/output/.gitkeep 
+!app/output/.gitkeep
+
+# Reference code
+reference/
+reference/smolmodels/ 
